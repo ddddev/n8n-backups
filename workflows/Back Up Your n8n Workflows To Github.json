@@ -175,8 +175,8 @@
       ]
     }
   },
-  "createdAt": "2023-04-17T00:47:48.379Z",
-  "id": "1",
+  "createdAt": "2023-04-17T00:47:50.750Z",
+  "id": "2",
   "name": "Back Up Your n8n Workflows To Github",
   "nodes": [
     {
@@ -192,6 +192,7 @@
     },
     {
       "parameters": {
+        "authentication": "oAuth2",
         "resource": "file",
         "operation": "get",
         "owner": "={{$node[\"Globals\"].json[\"repo\"][\"owner\"]}}",
@@ -210,9 +211,9 @@
       "typeVersion": 1,
       "alwaysOutputData": true,
       "credentials": {
-        "githubApi": {
-          "id": "11",
-          "name": "GitHub"
+        "githubOAuth2Api": {
+          "id": "2",
+          "name": "GitHub account"
         }
       },
       "continueOnFail": true
@@ -281,6 +282,7 @@
     },
     {
       "parameters": {
+        "authentication": "oAuth2",
         "resource": "file",
         "operation": "edit",
         "owner": "={{$node[\"Globals\"].json[\"repo\"][\"owner\"]}}",
@@ -298,14 +300,15 @@
       ],
       "typeVersion": 1,
       "credentials": {
-        "githubApi": {
-          "id": "11",
-          "name": "GitHub"
+        "githubOAuth2Api": {
+          "id": "2",
+          "name": "GitHub account"
         }
       }
     },
     {
       "parameters": {
+        "authentication": "oAuth2",
         "resource": "file",
         "owner": "={{$node[\"Globals\"].json[\"repo\"][\"owner\"]}}",
         "repository": "={{$node[\"Globals\"].json[\"repo\"][\"name\"]}}",
@@ -322,9 +325,9 @@
       ],
       "typeVersion": 1,
       "credentials": {
-        "githubApi": {
-          "id": "11",
-          "name": "GitHub"
+        "githubOAuth2Api": {
+          "id": "2",
+          "name": "GitHub account"
         }
       }
     },
@@ -450,8 +453,8 @@
       "typeVersion": 1,
       "credentials": {
         "n8nApi": {
-          "id": "162",
-          "name": "Docker"
+          "id": "1",
+          "name": "n8n account"
         }
       }
     },
@@ -485,6 +488,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2023-04-17T00:47:48.379Z",
-  "versionId": "1ada1980-7ddd-4dff-9e3f-7f71d5b7b25e"
+  "updatedAt": "2023-04-17T00:59:26.585Z",
+  "versionId": "dca78aeb-6677-4c12-9fe1-389a8d66874b"
 }
