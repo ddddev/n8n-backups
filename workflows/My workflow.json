@@ -1,0 +1,126 @@
+{
+  "active": true,
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook1": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2023-06-08T06:59:04.221Z",
+  "id": "4",
+  "name": "My workflow",
+  "nodes": [
+    {
+      "parameters": {
+        "path": "1d6bf5d7-e542-41c2-a163-bd4be8b0163a",
+        "options": {}
+      },
+      "id": "4271c69f-7a18-4929-b3c9-5caddac3290c",
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [
+        580,
+        320
+      ],
+      "webhookId": "1d6bf5d7-e542-41c2-a163-bd4be8b0163a"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://open.larksuite.com/open-apis/bot/v2/hook/db5d70e1-fb34-4022-b09d-a16c238bda29",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "msg_type",
+              "value": "text"
+            },
+            {
+              "name": "content",
+              "value": "={\"text\": \"{{ $json.query.msg }}\"}  "
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "071c0bd9-9238-46bd-ab88-b0bf4f88e78e",
+      "name": "HTTP Request",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        800,
+        320
+      ]
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "1e61883c-4dd0-472e-9202-e182f853390f",
+        "options": {}
+      },
+      "id": "f36514de-2b33-4d32-a891-4c33f244b7fb",
+      "name": "Webhook1",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [
+        580,
+        520
+      ],
+      "webhookId": "1e61883c-4dd0-472e-9202-e182f853390f"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://open.larksuite.com/open-apis/bot/v2/hook/db5d70e1-fb34-4022-b09d-a16c238bda29",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "msg_type",
+              "value": "text"
+            },
+            {
+              "name": "content",
+              "value": "={\"text\": \"project: {{ $json.body.project }}\\ntitle: {{ $json.body.event.title }}\\nmessage: {{ $json.body.message }}\"}   "
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "048107c4-f89b-4cc3-8cb8-4d41410cb7a0",
+      "name": "HTTP Request1",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        800,
+        520
+      ]
+    }
+  ],
+  "pinData": {},
+  "settings": {},
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 2,
+  "updatedAt": "2023-06-08T08:00:15.543Z",
+  "versionId": "ef08b02e-ac33-40a8-9915-149fd98c6ae3"
+}
