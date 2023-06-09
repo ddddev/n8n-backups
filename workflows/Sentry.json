@@ -30,6 +30,7 @@
   "nodes": [
     {
       "parameters": {
+        "httpMethod": "POST",
         "path": "1d6bf5d7-e542-41c2-a163-bd4be8b0163a",
         "options": {}
       },
@@ -121,6 +122,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 2,
-  "updatedAt": "2023-06-08T08:02:45.912Z",
-  "versionId": "86087902-1039-4a4c-8aa5-41138ec8b36a"
+  "updatedAt": "2023-06-08T20:58:22.258Z",
+  "versionId": "48332437-835f-459c-a087-f3fbef5c1f68"
 }
